@@ -7,15 +7,17 @@ export const Wrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  transform: translateX(12%);
-  width: calc(100vh - 100px);
+  transform: translateX(50px);
+  width: calc(100% - 100px);
   height: 183px;
   margin: 20px 10px;
   flex-shrink: 0;
   position: relative;
   transition: ${(props) => (props.isClone ? '' : '500ms all ease-in-out')};
   margin-left: ${(props) =>
-    props.currentIndex === 0 ? `-${props.currentSlide * 91}%` : undefined};
+    props.currentIndex === 0
+      ? `-${props.currentSlide * (window.innerWidth - 80)}px`
+      : undefined};
 `;
 
 export const Slider = styled.div`
