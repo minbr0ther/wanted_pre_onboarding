@@ -4,6 +4,9 @@ import { Wrapper, Slider, ImageWrapper } from './styles/ImageSliderElements';
 const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [isClone, setIsClone] = useState(false);
+  const [mouseDownClientX, setMouseDownClientX] = useState(0);
+  const [mouseUpClientX, setMouseUpClientX] = useState(0);
+  const [draggingOn, setDraggingOn] = useState(false);
 
   const nextSlide = (slideIndex = currentSlide + 1) => {
     const newSlideIndex = slideIndex >= images.length ? 0 : slideIndex;
@@ -24,6 +27,26 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
     }
   };
 
+  const onMouseDown = (e) => {
+    setMouseDownClientX(e.pageX);
+    setDraggingOn(true);
+  };
+
+  const onMouseUp = (e) => {
+    setMouseUpClientX(e.pageX);
+    setDraggingOn(false);
+  };
+
+  const onTouchStart = (e) => {
+    setMouseDownClientX(e.changedTouches[0].pageX);
+    setDraggingOn(true);
+  };
+
+  const onTouchEnd = (e) => {
+    setMouseUpClientX(e.changedTouches[0].pageX);
+    setDraggingOn(false);
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       nextSlide();
@@ -31,6 +54,19 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
 
     return () => clearTimeout(timer);
   }, [currentSlide, autoPlayTime]);
+
+  useEffect(() => {
+    const dragSpace = Math.abs(mouseDownClientX - mouseUpClientX);
+
+    if (mouseDownClientX !== 0) {
+      if (mouseUpClientX < mouseDownClientX && dragSpace > 30) {
+        setCurrentSlide(currentSlide + 1);
+      }
+      if (mouseUpClientX > mouseDownClientX && dragSpace > 30) {
+        setCurrentSlide(currentSlide - 1);
+      }
+    }
+  }, [mouseUpClientX]);
 
   return (
     <Wrapper {...props}>
@@ -41,6 +77,11 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
           currentSlide={currentSlide}
           isClone={isClone}
           onTransitionEnd={onTransitionEnd}
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          draggingOn={draggingOn}
         >
           <Slider style={{ backgroundImage: `url(${image.url})` }}></Slider>
         </ImageWrapper>
