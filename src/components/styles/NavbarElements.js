@@ -4,16 +4,23 @@ export const Navigation = styled.nav`
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #e8e8e8;
   margin-bottom: 8px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 90%;
+    height: 110px;
+    margin: 0 auto;
+  }
 `;
 
 export const NavTop = styled.div`
-  @media screen and (max-width: 767px) {
-    padding: 15px 20px;
-    width: 100%;
-  }
-
   .menu {
     width: 17px;
     height: 14px;
@@ -21,7 +28,18 @@ export const NavTop = styled.div`
 
   .logo {
     height: 18px;
-    margin-left: 10px;
+    margin-left: 15px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    padding: 15px 0;
+    height: 60px;
+    width: 100%;
   }
 `;
 
@@ -40,7 +58,7 @@ export const MainMenu = styled.ul`
 
 export const NavLink = styled.li`
   padding: 11px 10px 19px;
-  font-size: 15px;
+  font-size: 14px;
   position: relative;
   vertical-align: middle;
   line-height: 20px;
@@ -48,8 +66,19 @@ export const NavLink = styled.li`
   display: inline-block;
   cursor: pointer;
 
+  em {
+    position: absolute;
+    top: 5px;
+    right: -7px;
+  }
+
   @media screen and (max-width: 767px) {
     display: ${({ id }) => id >= 3 && 'none'};
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: ${({ id }) => id === 0 && 'none'};
+    font-size: 13px;
   }
 `;
 
@@ -65,6 +94,7 @@ export const AsideMenu = styled.aside`
   }
 
   button {
+    cursor: pointer;
     margin: 0;
     padding: 5px;
     border: 0;

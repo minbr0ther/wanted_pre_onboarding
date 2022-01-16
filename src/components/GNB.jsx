@@ -9,6 +9,8 @@ import {
 } from './styles/NavbarElements';
 import search from '../images/svgs/search.svg';
 import noti from '../images/svgs/noti.svg';
+import newIcon from '../images/svgs/new.svg';
+import beta from '../images/svgs/beta.svg';
 import menu from '../images/svgs/menu.svg';
 
 const NavigationBar = () => {
@@ -36,9 +38,19 @@ const NavigationBar = () => {
             <NavLink id={2}>이벤트</NavLink>
             <NavLink id={3}>직군별 연봉</NavLink>
             <NavLink id={4}>이력서</NavLink>
-            <NavLink id={5}>커뮤니티</NavLink>
+            <NavLink id={5}>
+              커뮤니티
+              <em>
+                <img src={newIcon} alt="new-icon" />
+              </em>
+            </NavLink>
             <NavLink id={6}>프리랜서</NavLink>
-            <NavLink id={7}>AI 합격예측</NavLink>
+            <NavLink id={7}>
+              AI 합격예측
+              <em>
+                <img src={beta} alt="beta-icon" />
+              </em>
+            </NavLink>
           </MainMenu>
           <AsideMenu>
             <ul>
@@ -50,6 +62,7 @@ const NavigationBar = () => {
               <li>
                 <button>
                   <img className="icon" src={noti} alt="noti-icon" />
+                  <span></span>
                 </button>
               </li>
               <li>
