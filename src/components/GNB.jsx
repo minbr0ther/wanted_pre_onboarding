@@ -74,7 +74,7 @@ const NavigationBar = () => {
               <div
                 style={{
                   backgroundImage:
-                    'url(https://lh3.googleusercontent.com/a-/AOh14Gh_gmu4xXOuA4c4b9AnGGXGZtK2djEPBeZuFtl46RM=s96-c)',
+                    'url(https://static.wanted.co.kr/images/profile_default.png)',
                   backgroundSize: 'cover',
                 }}
               ></div>

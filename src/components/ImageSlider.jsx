@@ -89,6 +89,28 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
     }
   }, [mouseUpClientX]);
 
+  // handleResize 함수를 debounce로 감싸고, 시간을 설정한다
+  // 1000ms = 1sec
+  function debounce(callback, limit = 100) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback.apply(this, args);
+      }, limit);
+    };
+  }
+
+  const handleResize = debounce(() => nextSlide(), 100);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      // cleanup
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <Wrapper {...props}>
       {images.map((image, index) => (
