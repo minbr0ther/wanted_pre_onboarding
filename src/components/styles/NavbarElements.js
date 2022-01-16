@@ -6,7 +6,7 @@ export const Navigation = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 1px solid #e8e8e8;
-  margin-bottom: 8px;
+  padding: 8px;
   position: relative;
 
   @media (min-width: 768px) and (max-width: 991px) {
@@ -17,7 +17,7 @@ export const Navigation = styled.nav`
 
   @media (min-width: 992px) and (max-width: 1199px) {
     width: 90%;
-    height: 50px;
+    height: 60px;
     margin: 0 auto;
     justify-content: space-between;
     flex-direction: row;
@@ -25,7 +25,7 @@ export const Navigation = styled.nav`
 
   @media (min-width: 1200px) {
     width: 87.72%;
-    height: 50px;
+    height: 60px;
     margin: 0 auto;
     flex-direction: row;
     max-width: 1060px;
