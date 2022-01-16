@@ -23,13 +23,13 @@ export const Navigation = styled.nav`
     flex-direction: row;
   }
 
-  /* @media (min-width: 1200px) {
+  @media (min-width: 1200px) {
     width: 87.72%;
     height: 50px;
     margin: 0 auto;
     flex-direction: row;
     max-width: 1060px;
-  } */
+  }
 `;
 
 export const NavTop = styled.div`
@@ -54,8 +54,8 @@ export const NavTop = styled.div`
     width: 100%;
   }
 
-  @media (min-width: 992px) and (max-width: 1199px) {
-    padding: 15px 0;
+  @media (min-width: 992px) {
+    padding: 12px 0;
     height: 60px;
   }
 `;
@@ -111,16 +111,10 @@ export const NavLink = styled.li`
     padding: 15px 0;
   }
 
-  @media (min-width: 1100px) and (max-width: 1199px) {
+  @media (min-width: 1100px) {
     display: ${({ id }) => id === 0 && 'none'};
     padding: 12px 15px;
   }
-
-  /* @media (min-width: 1200px) {
-    display: ${({ id }) => id === 0 && 'none'};
-    margin: 0 auto;
-    flex-direction: row;
-  } */
 `;
 
 export const AsideMenu = styled.aside`
@@ -161,7 +155,6 @@ export const AsideMenu = styled.aside`
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-right: 5px;
       position: relative;
       vertical-align: middle;
       // 동그라미 가운데로 보내기!!!
@@ -199,8 +192,16 @@ export const AsideMenu = styled.aside`
       }
     }
 
-    /* @media (min-width: 1200px) {
+    @media (min-width: 1200px) {
+      li {
+        padding: 0 7px;
+      }
 
-    } */
+      li:nth-child(5) {
+        &:before {
+          margin: auto 10px;
+        }
+      }
+    }
   }
 `;
