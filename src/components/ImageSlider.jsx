@@ -8,8 +8,11 @@ import {
   TitleText,
   ContentText,
   LinkText,
+  NextButton,
 } from './styles/ImageSliderElements';
-import chevron from '../images/svgs/chevron.svg';
+import blueChevron from '../images/svgs/chevron.svg';
+import leftChevron from '../images/svgs/leftChevron.svg';
+import rightChevron from '../images/svgs/rightChevron.svg';
 
 const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -17,6 +20,7 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const [mouseDownClientX, setMouseDownClientX] = useState(0);
   const [mouseUpClientX, setMouseUpClientX] = useState(0);
   const [draggingOn, setDraggingOn] = useState(false);
+  const [isDuringAnimation, setIsDuringAnimation] = useState(false);
 
   const nextSlide = (slideIndex = currentSlide + 1) => {
     const newSlideIndex = slideIndex >= images.length ? 0 : slideIndex;
@@ -55,6 +59,13 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const onTouchEnd = (e) => {
     setMouseUpClientX(e.changedTouches[0].pageX);
     setDraggingOn(false);
+  };
+
+  const changeSlide = (number) => {
+    if (isDuringAnimation) return;
+    setIsDuringAnimation(true);
+    setCurrentSlide(number);
+    setTimeout(() => setIsDuringAnimation(false), 600);
   };
 
   useEffect(() => {
@@ -101,11 +112,23 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
             <ContentText>{image.content}</ContentText>
             <hr />
             <LinkText>
-              {'바로가기 '} <img src={chevron} alt="chevron-right" />
+              {'바로가기 '} <img src={blueChevron} alt="blueChevron" />
             </LinkText>
           </Information>
         </ImageWrapper>
       ))}
+      <NextButton
+        className="left"
+        onClick={() => changeSlide(currentSlide - 1)}
+      >
+        <img src={leftChevron} alt="left-chevron" />
+      </NextButton>
+      <NextButton
+        className="right"
+        onClick={() => changeSlide(currentSlide + 1)}
+      >
+        <img src={rightChevron} alt="right-chevron" />
+      </NextButton>
     </Wrapper>
   );
 };

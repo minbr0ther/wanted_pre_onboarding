@@ -4,6 +4,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   overflow-x: hidden;
+
+  .left {
+    left: calc((100% - 1210px) / 2);
+  }
+
+  .right {
+    right: calc((100% - 1200px) / 2);
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -140,4 +148,20 @@ export const LinkText = styled.span`
   @media (min-width: 1200px) {
     margin: 15px 0 0 20px;
   }
+`;
+
+export const NextButton = styled.button`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 205px;
+  width: 30px;
+  height: 60px;
+  opacity: 0.5;
+  border-radius: 15px;
+  background-color: #fff;
+  font-size: 16px;
+  border: 0px;
 `;
