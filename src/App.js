@@ -1,8 +1,10 @@
-import "./App.scss";
+import GlobalStyle from './components/styles/GlobalStyle';
 
 function App() {
   return (
-   
+    <>
+      <GlobalStyle />
+    </>
   );
 }
 
