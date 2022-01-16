@@ -4,7 +4,12 @@ import {
   Slider,
   ImageWrapper,
   Gradient,
+  Information,
+  TitleText,
+  ContentText,
+  LinkText,
 } from './styles/ImageSliderElements';
+import chevron from '../images/svgs/chevron.svg';
 
 const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -91,6 +96,13 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
           <Slider style={{ backgroundImage: `url(${image.url})` }}>
             <Gradient isActive={currentSlide === index} />
           </Slider>
+          <Information>
+            <TitleText>{image.title}</TitleText>
+            <ContentText>{image.content}</ContentText>
+            <LinkText>
+              {'바로가기 '} <img src={chevron} alt="chevron-right" />
+            </LinkText>
+          </Information>
         </ImageWrapper>
       ))}
     </Wrapper>
