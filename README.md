@@ -5,6 +5,7 @@
 <h1 align="middle">[위코드 X 원티드] 프론트앤드 프리온보딩 선발 과제</h1>
 
 ## 🔗 배포
+https://minbr0ther-free-on-boarding.netlify.app/
 
 <br>
 
@@ -18,6 +19,22 @@
 <br>
 
 ## 💻 실행 결과
+
+### 1. 마우스 드래그 & 좌-우 버튼 클릭 (infinity slider)
+
+<img src="https://user-images.githubusercontent.com/24728385/149664884-b069bf42-87e2-401e-8db0-615d4f5e177a.gif" width="100%"/>
+
+<br>
+
+### 2. 반응형 테스트
+
+<img src="https://user-images.githubusercontent.com/24728385/149665095-9fee9151-cc76-49f2-9513-902a81f4ca3d.gif" width="100%"/>
+
+<br>
+
+### 3. 모바일 터치 테스트
+
+<img src="https://user-images.githubusercontent.com/24728385/149665124-8cf63b94-1831-4922-8bc0-ad5adf066a8c.gif" width="100%"/>
 
 <br>
 
