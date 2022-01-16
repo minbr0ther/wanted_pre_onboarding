@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Wrapper, Slider, ImageWrapper } from './styles/ImageSliderElements';
+import {
+  Wrapper,
+  Slider,
+  ImageWrapper,
+  Gradient,
+} from './styles/ImageSliderElements';
 
 const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -83,7 +88,9 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
           onTouchEnd={onTouchEnd}
           draggingOn={draggingOn}
         >
-          <Slider style={{ backgroundImage: `url(${image.url})` }}></Slider>
+          <Slider style={{ backgroundImage: `url(${image.url})` }}>
+            <Gradient isActive={currentSlide === index} />
+          </Slider>
         </ImageWrapper>
       ))}
     </Wrapper>

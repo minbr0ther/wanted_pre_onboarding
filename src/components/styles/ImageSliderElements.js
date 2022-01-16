@@ -27,3 +27,12 @@ export const Slider = styled.div`
   background-size: cover;
   border-radius: 3px;
 `;
+
+export const Gradient = styled.div`
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: ${(props) => (props.isActive ? '' : 'rgba(0, 0, 0, 0.3)')};
+  border-radius: 7px;
+`;
