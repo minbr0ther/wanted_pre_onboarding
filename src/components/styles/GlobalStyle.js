@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Apple SD Gothic Neo','Nanum Gothic','Malgun Gothic' sans-serif;
+    font-family: 'sans-serif','Apple SD Gothic Neo','Nanum Gothic','Malgun Gothic' ;
     font-size: 14px;
     line-height: 1.42;
     color: #333;
