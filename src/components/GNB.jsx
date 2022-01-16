@@ -29,50 +29,62 @@ const NavigationBar = () => {
             alt="logo"
           />
         </NavTop>
-        <NavBottom>
-          <MainMenu>
-            <NavLink id={0} style={{ borderBottom: '2px solid #258bf7' }}>
-              홈
-            </NavLink>
-            <NavLink id={1}>채용</NavLink>
-            <NavLink id={2}>이벤트</NavLink>
-            <NavLink id={3}>직군별 연봉</NavLink>
-            <NavLink id={4}>이력서</NavLink>
-            <NavLink id={5}>
-              커뮤니티
-              <em>
-                <img src={newIcon} alt="new-icon" />
-              </em>
-            </NavLink>
-            <NavLink id={6}>프리랜서</NavLink>
-            <NavLink id={7}>
-              AI 합격예측
-              <em>
-                <img src={beta} alt="beta-icon" />
-              </em>
-            </NavLink>
-          </MainMenu>
-          <AsideMenu>
-            <ul>
-              <li>
-                <button>
-                  <img className="icon" src={search} alt="search-icon" />
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img className="icon" src={noti} alt="noti-icon" />
-                  <span></span>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img className="icon" src={menu} alt="menu-icon" />
-                </button>
-              </li>
-            </ul>
-          </AsideMenu>
-        </NavBottom>
+        <MainMenu>
+          <NavLink id={0} style={{ borderBottom: '2px solid #258bf7' }}>
+            홈
+          </NavLink>
+          <NavLink id={1}>채용</NavLink>
+          <NavLink id={2}>이벤트</NavLink>
+          <NavLink id={3}>직군별 연봉</NavLink>
+          <NavLink id={4}>이력서</NavLink>
+          <NavLink id={5}>
+            커뮤니티
+            <em>
+              <img src={newIcon} alt="new-icon" />
+            </em>
+          </NavLink>
+          <NavLink id={6}>프리랜서</NavLink>
+          <NavLink id={7}>
+            AI 합격예측
+            <em>
+              <img src={beta} alt="beta-icon" />
+            </em>
+          </NavLink>
+        </MainMenu>
+        <AsideMenu>
+          <ul>
+            <li>
+              <button>
+                <img className="icon" src={search} alt="search-icon" />
+              </button>
+            </li>
+            <li>
+              <button>
+                <img className="icon" src={noti} alt="noti-icon" />
+                <span></span>
+              </button>
+            </li>
+            <li>
+              <button>
+                <img className="icon" src={menu} alt="menu-icon" />
+              </button>
+            </li>
+            <li>
+              <button>
+                <div
+                  style={{
+                    backgroundImage:
+                      'url(https://lh3.googleusercontent.com/a-/AOh14Gh_gmu4xXOuA4c4b9AnGGXGZtK2djEPBeZuFtl46RM=s96-c)',
+                    backgroundSize: 'cover',
+                  }}
+                ></div>
+              </button>
+            </li>
+            <li>
+              <button className="dashboardButton">기업 서비스</button>
+            </li>
+          </ul>
+        </AsideMenu>
       </Navigation>
     </>
   );
