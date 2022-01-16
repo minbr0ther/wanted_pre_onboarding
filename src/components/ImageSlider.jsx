@@ -96,9 +96,10 @@ const ImageSlider = ({ images = [], autoPlayTime = 4000, ...props }) => {
           <Slider style={{ backgroundImage: `url(${image.url})` }}>
             <Gradient isActive={currentSlide === index} />
           </Slider>
-          <Information>
+          <Information isActive={currentSlide === index}>
             <TitleText>{image.title}</TitleText>
             <ContentText>{image.content}</ContentText>
+            <hr />
             <LinkText>
               {'바로가기 '} <img src={chevron} alt="chevron-right" />
             </LinkText>
