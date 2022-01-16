@@ -1,4 +1,5 @@
 import NavigationBar from './components/GNB';
+import ImageSlider from './components/ImageSlider';
 import GlobalStyle from './components/styles/GlobalStyle';
 import images from './images/images.json';
 
@@ -15,7 +16,7 @@ function App() {
     <>
       <GlobalStyle />
       <NavigationBar />
-      {console.log(imagesWithBothEnds())}
+      <ImageSlider images={imagesWithBothEnds()} />
     </>
   );
 }
