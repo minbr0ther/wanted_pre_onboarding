@@ -10,6 +10,7 @@ https://minbr0ther-free-on-boarding.netlify.app/
 <br>
 
 ## 🏹 필수 구현사항
+> 구현사항 정리 [🔗](https://minbr0ther.notion.site/Free-On-Boarding-Assignment-c5f6c7d8b455448d89856c5426df2dd1)
 
 1. 상단 GNB(Global Navigation Bar)
 2. 슬라이드(또는 캐러샐이라고 불림) 영역
